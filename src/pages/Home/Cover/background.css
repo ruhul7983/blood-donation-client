@@ -1,0 +1,11 @@
+.background {
+    height: 450px;
+    width: 100%;
+    background-image: url("https://res.cloudinary.com/db4c4ud2n/image/upload/f_auto,q_auto/ugubjnyjm7ilgi9ncqfs.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
