@@ -19,7 +19,7 @@ const AboutNeedBlood = () => {
                 </div>
 
             </div>
-            <div className="text-center my-3"><Link className="px-4 py-2 rounded-md font-semibold bg-red-600 shadow-lg text-white hover:bg-black hover:text-white transition">Learn more</Link></div>
+            <div className="text-center my-3"><Link to={'/about-us'} className="px-4 py-2 rounded-md font-semibold bg-red-600 shadow-lg text-white hover:bg-black hover:text-white transition">Learn more</Link></div>
         </div>
     );
 };

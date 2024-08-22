@@ -6,7 +6,7 @@ const Navbar = () => {
         <li className="hover:translate-y-[3px] transition-all"><Link to={'/'}>Home</Link></li>
         <li className="hover:translate-y-[3px] transition-all"><Link to={'/about-us'}>About us</Link></li>
         <li className="hover:translate-y-[3px] transition-all"><Link to={'/'}>Find Donors</Link></li>
-        <li className="hover:translate-y-[3px] transition-all"><Link to={'/'}>Add Blood Request</Link></li>
+        <li className="hover:translate-y-[3px] transition-all"><Link to={'/add-request'}>Add Blood Request</Link></li>
         <li className="hover:translate-y-[3px] transition-all"><Link to={'/'}>Login</Link></li>
   
     </>

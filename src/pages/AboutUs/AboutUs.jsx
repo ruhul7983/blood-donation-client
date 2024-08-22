@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import './About.css'
+import PageTitle from "../components/PageTitle";
 const AboutUs = () => {
     return (
         <div className="bg-white">
@@ -7,12 +7,7 @@ const AboutUs = () => {
                 <title>Need Blood | About us</title>
             </Helmet>
             <div>
-                <div className="bg-about">
-                    <div className="max-w-6xl mx-auto">
-                        <h1 className="text-4xl font-bold py-5">About us</h1>
-                        <p>To know more about us</p>
-                    </div>
-                </div>
+                <PageTitle heading={"About Us"} subHeading={"To know more about us"}></PageTitle>
                 <div className="max-w-6xl mx-auto flex flex-col  md:flex-row gap-x-16 mt-4">
                     <div className="w-1/2">
                         <p>Need Blood is an automated blood service that connect blood searchers with voluntary blood donors in a moment through Email and website. Need Blood is a free service for all. Need Blood started its journey in 2018.</p>
