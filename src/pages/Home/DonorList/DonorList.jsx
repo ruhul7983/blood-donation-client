@@ -11,7 +11,7 @@ const DonorList = () => {
     },[])
     return (
         <div className="max-w-6xl mx-auto">
-            <h1 className="bg-red-600 pl-3 py-2 font-bold text-white my-4">Total Donor Found</h1>
+            <h1 className="bg-red-600 pl-3 py-2 font-bold text-white my-4">Total Donor Found: {users.length}</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 justify-between gap-2">
                 {/* Single */}
                 {
@@ -19,6 +19,7 @@ const DonorList = () => {
                         <div>
                             <CiUser className="text-9xl text-red-600"></CiUser>
                         </div>
+                        
                         <div>
                             <div className="flex gap-x-2 justify-between">
                                 <h1>Name:</h1>
