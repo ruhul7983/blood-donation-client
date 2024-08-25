@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PageTitle from "../components/PageTitle";
 import auth from './../../assets/auth.gif';
 import useAuth from "../../hooks/useAuth";
+import { useState } from "react";
 const Login = () => {
     const {signIn} = useAuth();
+    const [error,setError] = useState("");
+    const navigate = useNavigate();
     const handleLogin = (e)=>{
         e.preventDefault();
         const form = e.target;
@@ -12,8 +15,11 @@ const Login = () => {
         signIn(email,password)
         .then(res=>{
             console.log(res.user);
+            setError("");
+            navigate("/");
         })
         .catch(err=>{
+            setError("Please. Try again")
             console.log(err);
         })
     }
@@ -43,6 +49,7 @@ const Login = () => {
                             </label>
                             <input required className="w-full border py-2 px-3" type="password" name="password" id="" placeholder="Enter your password"/>
                         </div>
+                        <h1 className="text-red-600">{error}</h1>
                         <div className="flex items-center gap-x-1">
                             <input type="checkbox" name="" id="" />
                             <p>Remember Me</p>
