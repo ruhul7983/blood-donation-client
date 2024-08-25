@@ -8,8 +8,8 @@ const AboutUs = () => {
             </Helmet>
             <div>
                 <PageTitle heading={"About Us"} subHeading={"To know more about us"}></PageTitle>
-                <div className="max-w-6xl mx-auto flex flex-col  md:flex-row gap-x-16 mt-4">
-                    <div className="w-1/2">
+                <div className="md:max-w-6xl mx-auto flex flex-col  md:flex-row gap-x-16 mt-4">
+                    <div className="px-2 md:w-1/2">
                         <p>Need Blood is an automated blood service that connect blood searchers with voluntary blood donors in a moment through Email and website. Need Blood is a free service for all. Need Blood started its journey in 2018.</p>
                         <h1 className="text-2xl font-semibold">Why Need Blood?</h1>
                         <p>
@@ -18,7 +18,7 @@ const AboutUs = () => {
                         <br />
                         <p> Need Blood comes into the scenario to reduce or minimize the communication gap and connects people in a moment using the amazing power of SMS and email. As Need Blood services can also be availed by SMS, people from any class of the society can easily avail of Need Blood services.</p>
                     </div>
-                    <div>
+                    <div className="px-2">
                         <h1 className="text-2xl font-semibold">Vision</h1>
                         <p>Ensuring no more death just for the need of blood</p>
                         <h1 className="text-2xl font-semibold">Mission</h1>

@@ -1,13 +1,23 @@
 import { FaFacebook, FaGoogle, FaList, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
+    const {user,logOut}= useAuth();
+    const handleLogOut = ()=>{
+        return logOut();
+    }
     const navLinks = <>
         <li className="hover:translate-y-[3px] transition-all"><Link to={'/'}>Home</Link></li>
         <li className="hover:translate-y-[3px] transition-all"><Link to={'/about-us'}>About us</Link></li>
-        <li className="hover:translate-y-[3px] transition-all"><Link to={'/'}>Find Donors</Link></li>
+        <li className="hover:translate-y-[3px] transition-all"><Link to={'/find-donors'}>Find Donors</Link></li>
         <li className="hover:translate-y-[3px] transition-all"><Link to={'/add-request'}>Add Blood Request</Link></li>
-        <li className="hover:translate-y-[3px] transition-all"><Link to={'/'}>Login</Link></li>
+        {
+            user? <li className="hover:translate-y-[3px] transition-all">
+                <button onClick={handleLogOut}>Logout</button>
+            </li> :<li className="hover:translate-y-[3px] transition-all"><Link to={'/login'}>Login</Link></li>
+        }
+        
   
     </>
     return (
@@ -35,7 +45,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex justify-between items-center">
                     <div className="-mt-9 md:mt-6">
-                        <button className="w-14 hover:translate-y-[3px] transition-all "><img src="https://res.cloudinary.com/db4c4ud2n/image/upload/f_auto,q_auto/lzk0ixibi6qixckymjdj.png" alt="" /></button>
+                        <button className="w-20 hover:translate-y-[3px] transition-all "><img src="https://res.cloudinary.com/db4c4ud2n/image/upload/f_auto,q_auto/z1vfrf0t7oq0bcuqkecv.png" alt="" /></button>
                     </div>
                     <div className="text-white">
 

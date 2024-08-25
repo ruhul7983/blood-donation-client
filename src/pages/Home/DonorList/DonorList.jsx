@@ -51,7 +51,7 @@ const DonorList = () => {
     }
     return (
         <div className="max-w-6xl mx-auto">
-            <h1 className="bg-red-600 pl-3 py-2 font-bold text-white my-4">Total Donor Found: {users.length}</h1>
+            <h1 className="bg-red-600 pl-3 py-2 font-bold text-white my-4">Total Donor Found: {totalUsers}</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 justify-between gap-2">
                 {/* Single */}
                 {
@@ -72,7 +72,7 @@ const DonorList = () => {
                                 </div>
                                 <div className="flex justify-between">
                                     <h1>Group:</h1>
-                                    <h1 className="font-semibold">{user.group}</h1>
+                                    <h1 className="font-semibold">{user.bloodGroup}</h1>
                                 </div>
                                 <div className="flex justify-between">
                                     <h1>District:</h1>
