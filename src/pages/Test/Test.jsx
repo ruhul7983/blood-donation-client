@@ -1,12 +1,17 @@
+import React, { useState } from 'react';
+import {useTranslation} from "react-i18next";
+import LanguageSelector from './LanguageSelector';
+
+
 const Test = () => {
-    return (
-        <div className="min-h-screen">
-            <div className="h-44 w-44 bg-blue-500 mx-auto mt-7 rounded-full shadow-[0_0_15px_5px_rgba(59,130,246,0.6)] blur-lg">
-                
-            </div>
-            <div className="h-44 w-44 bg-blue-500 mx-auto mt-7 rounded-full shadow-[0_0_15px_5px_rgba(59,130,246,0.6)] blur-lg animate-pulsate">
-                    
-                </div>
+    const {t} = useTranslation();
+    const {line1,line2 } = t("description");
+     return (
+        <div className="min-h-screen max-w-6xl mx-auto">
+            <LanguageSelector/>
+            <h1 className="">{t("greeting")}</h1>
+            <h1 className="">{line1}</h1>
+            <h1 className="">{line2}</h1>
         </div>
     );
 };

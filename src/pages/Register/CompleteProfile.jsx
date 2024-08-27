@@ -19,6 +19,7 @@ const CompleteProfile = () => {
         const bloodGroup = form.bloodGroup.value;
         const district = form.district.value;
         const lastDonateDate = form.lastDonateDate.value;
+        const phone = form.phone.value;
 
          createUser(email,password)
         .then(res=>{
@@ -55,6 +56,14 @@ const CompleteProfile = () => {
                                 </div>
                             </label>
                             <input required className="w-full border py-2 px-3" type="text" placeholder="Ex. Ruhul" name="name" id="" />
+                        </div>
+                        <div className="w-full md:flex-1">
+                            <label className="form-control w-full">
+                                <div className="label">
+                                    <span className="label-text">Phone *</span>
+                                </div>
+                            </label>
+                            <input required className="w-full border py-2 px-3" type="number" placeholder="01545121345" name="phone" id="" />
                         </div>
 
                         <div>

@@ -8,6 +8,11 @@ import Login from "../pages/Login/Login";
 import Test from "../pages/Test/Test";
 import Register from "../pages/Register/Register";
 import CompleteProfile from "../pages/Register/CompleteProfile";
+import PrivateRoutes from "./PrivateRoutes";
+import DonorDetails from "../pages/Home/DonorList/DonorDetails";
+import Dashboard from "../Layout/Dashboard";
+import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
+import BloodRequest from "../pages/Dashboard/BloodRequest/BloodRequest";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +29,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/add-request",
-            element:<AddRequest></AddRequest>,
+            element:<PrivateRoutes><AddRequest></AddRequest></PrivateRoutes>,
         },
         {
             path:"/find-donors",
@@ -43,11 +48,31 @@ const router = createBrowserRouter([
             element:<CompleteProfile></CompleteProfile>,
         },
         {
+            path:"/user-details/:id",
+            element:<DonorDetails></DonorDetails>,
+            loader:({params})=>fetch(`http://localhost:5000/users/${params.id}`)
+        },
+        {
             path:"/test",
             element:<Test></Test>,
         },
       ]
     },
+    
+    {
+        path:"dashboard",
+        element:<Dashboard></Dashboard>,
+        children:[
+            {
+                path:"admin-home",
+                element:<AdminHome></AdminHome>
+            },
+            {
+                path:"request-blood",
+                element:<BloodRequest></BloodRequest>
+            },
+        ]
+    }
   ]);
 
 export default router;

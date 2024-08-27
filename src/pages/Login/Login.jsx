@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import PageTitle from "../components/PageTitle";
 import auth from './../../assets/auth.gif';
 import useAuth from "../../hooks/useAuth";
@@ -7,6 +7,9 @@ const Login = () => {
     const {signIn} = useAuth();
     const [error,setError] = useState("");
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    console.log("location ",from);
     const handleLogin = (e)=>{
         e.preventDefault();
         const form = e.target;
@@ -16,7 +19,7 @@ const Login = () => {
         .then(res=>{
             console.log(res.user);
             setError("");
-            navigate("/");
+            navigate(from,{replace:true});
         })
         .catch(err=>{
             setError("Please. Try again")

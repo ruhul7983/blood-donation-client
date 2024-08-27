@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CiUser } from "react-icons/ci";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import UserComponent from "../../components/UserComponent";
 
 const DonorList = () => {
     // Letter will convert into axios
@@ -60,26 +61,7 @@ const DonorList = () => {
                         <div className="skeleton h-32 w-full"></div>
                         <div className="skeleton h-32 w-full"></div>
                     </>
-                        : users.map(user => <div key={user._id} className="flex items-center border-2 rounded hover:shadow-md hover:border-gray-400 transition-all">
-                            <div>
-                                <CiUser className="text-9xl text-red-600"></CiUser>
-                            </div>
-
-                            <div>
-                                <div className="flex gap-x-2 justify-between">
-                                    <h1>Name:</h1>
-                                    <h1 className="font-semibold">{user.name}</h1>
-                                </div>
-                                <div className="flex justify-between">
-                                    <h1>Group:</h1>
-                                    <h1 className="font-semibold">{user.bloodGroup}</h1>
-                                </div>
-                                <div className="flex justify-between">
-                                    <h1>District:</h1>
-                                    <h1 className="font-semibold">{user.district}</h1>
-                                </div>
-                            </div>
-                        </div>)
+                        : users.map(user => <UserComponent user={user} key={user._id}></UserComponent>)
                 }
             </div>
             <div className="text-center my-4">

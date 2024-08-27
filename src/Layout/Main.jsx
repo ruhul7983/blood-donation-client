@@ -3,14 +3,16 @@ import Navbar from "../pages/Shared/Navbar/Navbar";
 import Footer from "../pages/Shared/Footer/Footer";
 import { useEffect, useState } from "react";
 import SplashScreen from "../pages/SplashScreen/SplashScreen";
+import useAuth from "../hooks/useAuth";
 
 const Main = () => {
-    const [loading,setLoading] = useState(true);
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 1500);
-      }, []);
+    const [loading,setLoading] = useState(false);
+    // const {loading} = useAuth();
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setLoading(false);
+    //     }, 1500);
+    //   }, []);
     
     
     return (
