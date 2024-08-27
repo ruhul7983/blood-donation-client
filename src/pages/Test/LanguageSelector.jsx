@@ -14,7 +14,6 @@ const LanguageSelector = () => {
         // setSelectedValue(value);
         console.log('Selected option:', value);
         changeLanguage(value);
-        // You can call any other function or perform actions here
       };
     const changeLanguage =(lng)=>{
         console.log(lng);
